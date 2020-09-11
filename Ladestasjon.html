@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<head>
+    
+    <link rel="stylesheet" href="navigasjonsbar.css">
+    
+	<script>
+			function showKommune(){
+				var x = document.getElementById("fylke").value;
+				document.getElementById("mV").style.display = "none"
+				document.getElementById("mR").style.display = "none"
+				
+				document.getElementById("v1").style.display = "none"
+				document.getElementById("v2").style.display = "none"
+				document.getElementById("v3").style.display = "none"
+				
+				document.getElementById("r1").style.display = "none"
+				document.getElementById("r2").style.display = "none"
+				
+				
+				vestland.selectedIndex = 0;
+				rogaland.selectedIndex = 0;
+				
+				switch(x) {
+					case "def":
+						document.getElementById("v1").style.display = "block"
+						document.getElementById("v2").style.display = "block"
+						document.getElementById("v3").style.display = "block"
+						
+						document.getElementById("r1").style.display = "block"
+						document.getElementById("r2").style.display = "block"
+						
+						document.getElementById("mV").style.display = "none"
+						document.getElementById("mR").style.display = "none"
+					break;
+					case "mV":
+						document.getElementById("v1").style.display = "block"
+						document.getElementById("v2").style.display = "block"
+						document.getElementById("v3").style.display = "block"
+					break;
+					case "mR":
+						document.getElementById("r1").style.display = "block"
+						document.getElementById("r2").style.display = "block"
+					break;
+				}
+				
+				document.getElementById(x).style.display = "block";
+			}
+			function showStasjon1(){
+				var index = document.getElementById("vestland").value;
+				
+				switch(index) {
+					case "def":
+						document.getElementById("v1").style.display = "block"
+						document.getElementById("v2").style.display = "block"
+						document.getElementById("v3").style.display = "block"
+					break;
+					case "1":
+					document.getElementById("v1").style.display = "block"
+					document.getElementById("v2").style.display = "none"
+					document.getElementById("v3").style.display = "none"
+					break;
+					case "2":
+					document.getElementById("v1").style.display = "none"
+					document.getElementById("v2").style.display = "block"
+					document.getElementById("v3").style.display = "none"
+					break;
+					case "3":
+					document.getElementById("v1").style.display = "none"
+					document.getElementById("v2").style.display = "none"
+					document.getElementById("v3").style.display = "block"
+					break;
+				}
+			}
+			function showStasjon2(){
+				var index = document.getElementById("rogaland").value;
+				
+				switch(index) {
+					case "def":
+						document.getElementById("r1").style.display = "block"
+						document.getElementById("r2").style.display = "block"
+					break;
+					case "1":
+					document.getElementById("r1").style.display = "block"
+					document.getElementById("r2").style.display = "none"
+					break;
+					case "2":
+					document.getElementById("r1").style.display = "none"
+					document.getElementById("r2").style.display = "block"
+					break;
+				}
+			}
+			
+	</script>
+		
+	<style>
+        
+        body{
+            margin: 0 auto;
+        }
+        
+		.selector{
+			background-color:#e8f5fc;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+			
+		}
+        
+		
+		.main {
+			background-color:white;
+            
+		}
+		.title1 {
+			height:100px;
+			background-color:white;
+		}
+		.text1 {
+			height:150px;
+			background-color:white;
+		}
+		.selector1 {
+			height:100px;
+			background-color:white;
+		}
+		.info1 {
+			width:80%;
+			min-height:600px;
+			overflow:auto;
+			background-color:white;
+		}
+		.box3{
+			height:500px;
+			background-color:white;
+			vertical-align:middle;
+			text-align:center;
+
+		}
+		.box1 {
+			width:33.33%;
+			height:100%;
+			margin:0 auto;
+			background-color:white;
+			float:left;
+		}
+		.box2 {
+			width:80%;
+			height:90%;
+			background-color:#e8f5fc;
+			vertical-align:middle;
+			text-align:center;
+		}
+		.box4 {
+			width:40%;
+			height:90%;
+			background-color:black;
+		}
+		.box5 {
+
+			height: 500px;
+			background-color:white;
+		}
+		
+		.title2 {
+			color:#004c9c;
+			text-align:center;
+			font-size:80px;
+		}
+		.text1 {
+			text-align:center;
+		}
+		
+		img {
+			padding:30px;
+			width: 500px;
+            float: left;
+		}
+        
+        table {
+            margin: 0 auto;
+        }
+        
+		
+		th {
+			font-size:30px;
+			background-color:#e8f5fc;
+			color:#004c9c;
+			padding:30px;
+		}
+			
+		td {
+			border: 3px solid #e8f5fc;
+			font-size:20px;
+			text-align:center;
+			padding:30px;
+			
+        }
+        
+        footer {
+            background-color: #428bca;
+            width: 100%;
+            height: 80px;
+            color: white;
+            text-align: center;
+            
+        }
+        .linker {
+            float: left;
+            margin-top: 50px;
+            margin-left: 10px
+        }
+        
+        
+        .kontaktinfo {
+            width: 230px;
+            margin: auto;
+            padding: 10px;
+        }
+        
+        .medier {
+            float: left;
+            width: 50px;
+        }
+        
+        
+	</style>
+
+</head>
+
+<body>
+    
+    <header>
+    <ul>
+            <li><a href="fremside.html">Hjem</a></li>
+            <li><a href="#">Navigasjonsside</a></li>
+            <li class = "dropdown">
+                <a class="dropdownknapp">Ladestasjoner</a>
+                <div class="dropdown-ting">
+                <a href="#">test 1</a>
+                <a href="#">test 2</a>
+                </div>
+            </li>
+            <li style="float: right"><a href="om_oss.html">Om oss</a></li>
+        </ul>
+    </header>
+    
+    
+    
+    
+    
+    
+    
+    
+	<div class="main">
+		<div class="title1">
+			<h1 class="title2">
+				Ladestasjoner
+			</h1>
+		</div>
+		<div class="text1">
+			<h3 style="color:#004c9c;">
+				Her finner du informasjon om de forskjellige ladestasjoner tilgjengelige for lading av El-Båt.
+			</h3>
+			<p>
+				ved å velge fylke og kommune vill du få tilgang til informasjon om ladepunkter tilgjengelige i valgt område, samt en oversikt over eventuelle tjenester og fasiliteter i nærområdet.
+			</p>
+		</div>
+		<div class="selector1">
+			<div id="meny">
+		<div id="mfylke">
+			<select id="fylke" name="fylke" onchange="showKommune()" class="selector">
+				<option value="0" selected disabled hidden> velg et fylke</option>
+				<option value="def">Alle</option>
+				<option value="mV">Vestland</option>
+				<option value="mR">Rogaland</option>
+			</select>
+		</div>
+		<div id="mV" style="display:none">
+			<select id="vestland" name="vestland" onchange="showStasjon1()" class="selector">
+				<option value="0" selected disabled hidden> velg en kommune</option>
+				<option value="def">Alle</option>
+				<option value="1">Bergen</option>
+				<option value="2">Bjørnefjorden</option>
+				<option value="3">Sogndal</option>
+			</select>
+		</div>
+		<div id="mR" style="display:none">
+			<select id="rogaland" name="rogaland" onchange="showStasjon2()" class="selector">
+				<option value="0" selected disabled hidden> velg en kommune</option>
+				<option value="def">Alle</option>
+				<option value="1">Stavanger</option>
+				<option value="2">Haugesund</option>
+			</select>
+		</div>
+		
+	</div>
+		</div>
+		<div class="info1" style="clear:both">
+		
+			<div id="v1">
+				<img src="bergen.jpg"/ style="float:left">
+				<div style="float:left">
+					<h3 style="color:#004c9c">
+						Bergen
+					</h3>
+					<p>
+						tilgjengelige ladekontakter: <br>
+						ChadeMO, CCS og Type2 <br>
+						<br>
+						fasiliteter: <br>
+						kiosk 200m <br>
+						informasjon 50m <br>
+						bussholdeplass 500m <br>
+						dagligvare butikk 400m <br>
+						hotell 200m <br>
+						restaurant 150m <br>
+					</p>
+					<a href="https://www.google.no/maps/dir/Strandsiden,+Bergen">
+						google maps
+					</a>
+				</div>		
+			</div>
+			
+			<div id="v2">
+				<img src="bjornefjorden.jpg"/ style="float:left">
+				<div style="float:left">
+					<h3 style="color:#004c9c">
+						Bjørnefjorden
+					</h3>
+					<p>
+						tilgjengelige ladekontakter: <br>
+						Type2 <br>
+						<br>
+						fasiliteter: <br>
+						kiosk 50m <br>
+						informasjon 250m <br>
+						bussholdeplass 300m <br>
+						dagligvare butikk 600m <br>
+						restaurant 150m <br>
+					</p>
+					<a href="https://www.google.no/maps/dir//Os+Gjestehavn,+5200+Os">
+						google maps
+					</a>
+				</div>		
+			</div>
+			
+			<div id="v3">
+				<img src="sogndal.jpeg"/ style="float:left">
+				<div style="float:left">
+					<h3 style="color:#004c9c">
+						Sogndal
+					</h3>
+					<p>
+						tilgjengelige ladekontakter: <br>
+						ChadeMO og CCS <br>
+						<br>
+						fasiliteter: <br>
+						kiosk 400m <br>
+						bussholdeplass 600m <br>
+						dagligvare butikk 150m <br>
+						apotek 100m <br>
+					</p>
+					<a href="https://www.google.no/maps/place/Fjordstien,+6856+Sogndal">
+						google maps
+					</a>
+				</div>		
+			</div>
+			
+			<div id="r1">
+				<img src="stavanger.jpg"/ style="float:left">
+				<div style="float:left">
+					<h3 style="color:#004c9c">
+						Stavanger
+					</h3>
+					<p>
+						tilgjengelige ladekontakter: <br>
+						CCS, ChadeMO og Type2 <br>
+						<br>
+						fasiliteter: <br>
+						kiosk 400m <br>
+						informasjon 250m <br>
+						bussholdeplass 450m <br>
+						dagligvare butikk 400m <br>
+						parkeringsplass 100m <br>
+					</p>
+					<a href="https://www.google.no/maps/place/%C3%98sterv%C3%A5gkaien,+4006+Stavanger">
+						google maps
+					</a>
+				</div>		
+			</div>
+			
+			<div id="r2">
+				<img src="haugesund.jpg"/ style="float:left">
+				<div style="float:left">
+					<h3 style="color:#004c9c">
+						Haugesund
+					</h3>
+					<p>
+						tilgjengelige ladekontakter: <br>
+						ChadeMO og Type2 <br>
+						<br>
+						fasiliteter: <br>
+						kiosk 300m <br>
+						informasjon 350m <br>
+						bussholdeplass 100m <br>
+						dagligvare butikk 400m <br>
+						restaurant 20m <br>
+						hotell 150m <br>
+					</p>
+					<a href="https://www.google.no/maps/place/Smedasundet,+5527+Haugesund">
+						google maps
+					</a>
+				</div>		
+			</div>
+		</div>
+		<div class="box3">
+			<div class="box1">
+				<div class="box2">
+					<img src="CCS.png" style="width:100px" />
+					<div style="position:relative;top:10px;color:#004c9c">
+						<h2>
+							CSS
+						</h2>
+						<p>
+							DC strøm <br>
+							50kW <br>
+							150kW <br>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="box1">
+				<div class="box2">
+					<img src="CHADEMO.png" style="width:100px" />
+					<div style="position:relative;top:110px;color:#004c9c">
+						<h2>
+							CHAdeMO
+						</h2>
+						<p>
+							DC strøm <br>
+							50kW <br>
+							150kW <br>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="box1">
+				<div class="box2">
+					<img src="TYPE2.png" style="width:100px" />
+					<div style="position:relative;top:140px;color:#004c9c">
+						<h2>
+							Type2
+						</h2>
+						<p>
+							AC strøm <br>
+							50kW <br>
+							150kW <br>
+							250kW <br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box3">
+			
+			<table>
+				<thead>
+					<th>
+						forventet lade tid:
+					</th>
+				
+					<th>
+						50kW
+					</th>
+					
+					<th>
+						150kW
+					</th>
+					
+					<th>
+						250kW
+					</th>
+					
+				</thead>
+				<tbody>
+					<tr>
+						<th>
+							70kWh
+						</th>
+						<td>
+							84min
+						</td>
+						<td>
+							28min
+						</td>
+						<td>
+							17min
+						</td>
+					</tr>
+					<tr>
+						<th>
+							140kWh
+						</th>
+						<td>
+							168min
+						</td>
+						<td>
+							56min
+						</td>
+						<td>
+							34min
+						</td>
+					</tr>
+					<tr>
+						<th>
+							210kWh
+						</th>
+						<td>
+							252min
+						</td>
+						<td>
+							84min
+						</td>
+						<td>
+							50min
+						</td>
+					</tr>
+				</table>
+
+            </div>
+	</div>
+    
+  <footer>
+           <img class="medier" src="bilder/facebook.png"> 
+            <p class="linker">facebook.com/chabo</p>
+            
+            <img class="medier" src="bilder/instagram.png">
+            <p class="linker">@ChaBo</p>
+            <p class="kontaktinfo">kontakt oss: <br> 
+                                                                    telefon: 99 99 99 99 <br>
+                                                                    e-mail: hjelp@chabo.no</p>
+            
+        </footer>
+</body>
